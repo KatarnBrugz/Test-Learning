@@ -2,7 +2,7 @@ package Binary;
 /*
  * Name: Kyle Brugmans
  * Program description:
- * 		Find the binary value of a decimal number.
+ * Find the binary value of a decimal number.
  */
 
 public class binary {
