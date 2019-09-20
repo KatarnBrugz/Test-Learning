@@ -5,6 +5,8 @@ package Binary;
  * Find the binary value of a decimal number.
  */
 
+import javax.swing.JOptionPane;
+
 public class binary {
 	
 	// These are the starting Numbers // Start number is user defined //
@@ -12,8 +14,8 @@ public class binary {
 	// newNumber is the constantly changing value which will store the
 	// numbers into x1 to x8 //
 	
-	static int startNumber = 65535;
-	static int newNumber = startNumber;
+	static int startNumber;
+	static int newNumber;
 	
 	static int x1; static int x2; static int x3; static int x4; 
 	static int x5; static int x6; static int x7; static int x8;
@@ -72,7 +74,7 @@ public class binary {
 		 * with the next half of the original number.
 		 */
 		
-		// Example using the number 9
+		// Example using the number 8
 		
 		x16 = newNumber%2;
 		newNumber = newNumber/2; // 8/2 = 4 = R 0
@@ -126,14 +128,32 @@ public class binary {
 		// We read for binary going upwards
 	}
 	
+	public static void PopUpBinary() {
+		JOptionPane.showMessageDialog(null,
+				"Decimal "+startNumber+" in binary equal to:\n"+x1+""+x2+""+x3+""+x4+" "+
+				x5+""+x6+""+x7+""+x8+" "+x9+""+x10+""+x11+""+x12+" "+x13+""+
+				x14+""+x15+""+x16);
+	}
 	
+	public static void PopUpOption( ) {
+		
+		startNumber = Integer.parseInt(JOptionPane.showInputDialog(null,
+				"Any number from 0 to 65535", "Pick a number",
+				JOptionPane.PLAIN_MESSAGE));
+		
+		newNumber = startNumber;
+	}
 	
 	public static void main(String[]args) {
+		
+		PopUpOption();
 		
 		InitialNumber();
 		
 		Binary();
 		BinaryNumber();
+		
+		PopUpBinary();
 		
 	}
 }
